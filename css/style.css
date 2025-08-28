@@ -67,6 +67,12 @@
     height: 48px;
 }
 
+#envelope{
+    width: 48px;
+    height: 17px;
+    padding-left: 15px;
+}
+
 .btn-square,
 .btn-sm-square,
 .btn-lg-square {
