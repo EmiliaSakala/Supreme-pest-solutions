@@ -29,6 +29,7 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+
 </head>
 
 <body>
@@ -387,42 +388,13 @@ better friendships/relationships, and 4) Will it be beneficial to all involved.<
       <div class="col-lg-6 quote-form" data-parallax="scroll" data-image-src="img/5.jpg">
         <div class="h-100 px-4 px-sm-5 pe-lg-0 wow fadeIn" data-wow-delay="0.5s">
           <div class="bg-white p-4 p-sm-5">
-            <form id="quote-form">
-              <div class="row g-3">
-                <div class="col-sm-6">
-                  <div class="form-floating">
-                    <input type="text" class="form-control" name="name" placeholder="Your Name" required>
-                    <label>Your Name</label>
-                  </div>
-                </div>
-                <div class="col-sm-6">
-                  <div class="form-floating">
-                    <input type="email" class="form-control" name="email" placeholder="Your Email" required>
-                    <label>Your Email</label>
-                  </div>
-                </div>
-                <div class="col-sm-6">
-                  <div class="form-floating">
-                    <input type="text" class="form-control" name="mobile" placeholder="Your Mobile">
-                    <label>Your Mobile</label>
-                  </div>
-                </div>
-                <div class="col-sm-6">
-                  <div class="form-floating">
-                    <input type="text" class="form-control" name="service" placeholder="Service Type">
-                    <label>Service Type</label>
-                  </div>
-                </div>
-                <div class="col-12">
-                  <div class="form-floating">
-                    <textarea class="form-control" name="message" placeholder="Message" style="height:80px"></textarea>
-                    <label>Message</label>
-                  </div>
-                </div>
-                <div class="col-12">
-                  <button class="btn btn-primary py-3 px-5" type="submit">Get A Free Quote</button>
-                </div>
-              </div>
+            <form action="https://formsubmit.co/your@email.com" method="POST">
+              <input type="hidden" name="_subject" value="New Quote Request!">
+             <input type="email" name="email" placeholder="Email Address" required>
+             <input type="hidden" name="_next" value="https://yourdomain.co/thanksyou.html">
+             <input type="text" name="name" required>
+
+             <button type="submit">Send</button>
             </form>
           </div>
         </div>
@@ -432,30 +404,7 @@ better friendships/relationships, and 4) Will it be beneficial to all involved.<
   </div>
 </div>
 
-<!-- EmailJS Script -->
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-<script type="text/javascript">
-  (function(){
-    emailjs.init({
-      publicKey: "ZRN0v631dWYeoIltu",  // 🔑 Replace with your EmailJS public key
-    });
-  })();
 
-  const form = document.getElementById("quote-form");
-
-  form.addEventListener("submit", function(e) {
-    e.preventDefault();
-
-    emailjs.sendForm("service_mnien8p", "template1", this)
-      .then(() => {
-        alert("✅ Quote request sent successfully!");
-        form.reset();
-      }, (error) => {
-        alert("❌ Failed to send quote. Try again.");
-        console.error("EmailJS Error:", error);
-      });
-  });
-</script>
 
     <!-- Quote End -->
 
